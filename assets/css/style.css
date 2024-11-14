@@ -48,6 +48,36 @@ Version      : 1.0
     --title-font: "Inter", sans-serif;
 }
 
+.portfolio-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-box:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-caption,
+.portfolio-category {
+    position: relative;
+    z-index: 2; /* Ensure text appears above the overlay */
+}
 
 * {
     margin: 0;
@@ -84,6 +114,11 @@ h6,
 .accordion-item .accordion-button {
     color: var(--main-color);
     font-family: var(--title-font);
+}
+.single-image img {
+    width: 40vh;
+    height:40vh; /* Set a fixed height for consistency */
+    object-fit: cover; /* Ensures images maintain aspect ratio while filling the fixed dimensions */
 }
 
 h1,
